@@ -35,3 +35,47 @@ WHERE is_active = 1;
 SELECT ROUND(AVG(rating), 1) AS average_rating,
        COUNT(*) - COUNT(rating) AS missing_ratings
 FROM shows;
+
+
+-- ============================================================
+-- SECTION B: GROUPING AND FILTERING GROUPS
+-- GROUP BY, HAVING and Aggregate Functions
+-- ============================================================
+
+
+-- Q5: Count the number of users on each subscription plan.
+
+SELECT plan,
+       COUNT(*) AS total_users
+FROM users
+GROUP BY plan
+ORDER BY plan;
+
+
+-- Q6: Calculate the average rating for each genre,
+-- ordered from highest to lowest.
+
+SELECT genre,
+       ROUND(AVG(rating), 2) AS average_rating
+FROM shows
+GROUP BY genre
+ORDER BY average_rating DESC;
+
+
+-- Q7: Identify genres that contain more than two shows.
+
+SELECT genre,
+       COUNT(*) AS total_shows
+FROM shows
+GROUP BY genre
+HAVING COUNT(*) > 2;
+
+
+-- Q8: Calculate average minutes watched per device,
+-- ordered from highest to lowest.
+
+SELECT device,
+       ROUND(AVG(minutes_watched), 2) AS average_minutes
+FROM views
+GROUP BY device
+ORDER BY average_minutes DESC;

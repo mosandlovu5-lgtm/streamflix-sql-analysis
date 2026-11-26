@@ -48,3 +48,26 @@ I identified four Premium subscribers and three users with missing age informati
 I also learned that AVG and COUNT(column) ignore NULL values, while COUNT(*) counts all records.
 
 I validated my results against the checkpoints provided in the project brief before saving my queries in analysis.sql.
+
+
+### 7. Section B — Grouping and Filtering Groups
+
+In this section, I used GROUP BY, HAVING, COUNT, AVG and ORDER BY to analyse subscribers, content ratings and viewing behaviour.
+
+I found that all three subscription plans had four registered users each. I also discovered that Drama had the highest average rating and was the only genre with more than two shows.
+
+When analysing viewing behaviour by device, I found that TV users had the longest average viewing sessions.
+
+One of the important things I learned was the difference between WHERE and HAVING. WHERE filters individual records, while HAVING allows me to filter results after grouping them.
+
+I also learned that getting a numerical result is not enough. As a data analyst, I need to understand what the result means for the business and consider the limitations of the available data before making recommendations.### 7. Section B — Grouping and Filtering Groups
+
+In this section, I used GROUP BY, HAVING, COUNT, AVG and ORDER BY to analyse subscribers, content ratings and viewing behaviour.
+
+I found that all three subscription plans had four registered users each. I also discovered that Drama had the highest average rating and was the only genre with more than two shows.
+
+When analysing viewing behaviour by device, I found that TV users had the longest average viewing sessions.
+
+One of the important things I learned was the difference between WHERE and HAVING. WHERE filters individual records, while HAVING allows me to filter results after grouping them.
+
+I also learned that getting a numerical result is not enough. As a data analyst, I need to understand what the result means for the business and consider the limitations of the available data before making recommendations.
