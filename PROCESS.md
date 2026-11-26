@@ -31,3 +31,20 @@ I also learned how to open a separate SQL tab to run validation queries without 
 ### 4. What I Learned
 
 I learned how to create and populate a SQLite database, execute SQL scripts and validate a dataset before beginning an analysis. This helped me understand the importance of checking data before drawing business conclusions.
+
+
+## Day 2 — 26 November 2026
+
+### 5. Practising SQL Techniques
+
+Before starting the assessment questions, I completed the five worked examples provided in the project brief. These helped me understand how to combine tables using JOINs, group data, identify unmatched records using LEFT JOIN, use subqueries and calculate business metrics using CASE.
+
+### 6. Section A — Foundations
+
+I completed the first four analysis questions using SELECT, WHERE, SUM, AVG, COUNT and NULL handling.
+
+I identified four Premium subscribers and three users with missing age information. I calculated the total monthly revenue from active subscribers as R1,242 and the average show rating as 7.8 out of 10.
+
+I also learned that AVG and COUNT(column) ignore NULL values, while COUNT(*) counts all records.
+
+I validated my results against the checkpoints provided in the project brief before saving my queries in analysis.sql.
