@@ -79,3 +79,74 @@ SELECT device,
 FROM views
 GROUP BY device
 ORDER BY average_minutes DESC;
+
+
+-- ============================================================
+-- SECTION C: JOINS
+-- Customer Engagement and Content Performance
+-- ============================================================
+
+-- Q9: Display each view with the user's name
+-- and the show's title.
+
+SELECT v.view_id,
+       u.full_name,
+       s.title,
+       v.minutes_watched
+FROM views v
+JOIN users u ON v.user_id = u.user_id
+JOIN shows s ON v.show_id = s.show_id
+ORDER BY v.view_id;
+
+-- Q10: Calculate total minutes watched per genre.
+
+SELECT s.genre,
+       SUM(v.minutes_watched) AS total_minutes
+FROM views v
+JOIN shows s ON v.show_id = s.show_id
+GROUP BY s.genre
+ORDER BY total_minutes DESC;
+
+
+-- Q11: Identify the most-watched show
+-- based on the number of plays.
+
+SELECT s.title,
+       COUNT(v.view_id) AS total_plays
+FROM views v
+JOIN shows s ON v.show_id = s.show_id
+GROUP BY s.show_id, s.title
+ORDER BY total_plays DESC
+LIMIT 1;
+
+
+-- Q12: Calculate the number of views per plan.
+-- Compare Premium and Basic viewing activity.
+
+SELECT u.plan,
+       COUNT(v.view_id) AS total_views
+FROM views v
+JOIN users u ON v.user_id = u.user_id
+GROUP BY u.plan
+ORDER BY total_views DESC;
+
+
+-- Q13: Identify the top three most-engaged users
+-- based on total minutes watched.
+
+SELECT u.full_name,
+       SUM(v.minutes_watched) AS total_minutes
+FROM views v
+JOIN users u ON v.user_id = u.user_id
+GROUP BY u.user_id, u.full_name
+ORDER BY total_minutes DESC
+LIMIT 3;
+
+
+-- Q14: Identify users who have never watched anything.
+
+SELECT u.full_name
+FROM users u
+LEFT JOIN views v ON u.user_id = v.user_id
+WHERE v.view_id IS NULL;
+

@@ -71,3 +71,32 @@ When analysing viewing behaviour by device, I found that TV users had the longes
 One of the important things I learned was the difference between WHERE and HAVING. WHERE filters individual records, while HAVING allows me to filter results after grouping them.
 
 I also learned that getting a numerical result is not enough. As a data analyst, I need to understand what the result means for the business and consider the limitations of the available data before making recommendations.
+
+### Mentor Feedback and Critical Thinking
+
+During the project, I asked my mentor two questions about the business analysis.
+
+My first question was about whether the lack of viewing activity among cancelled subscribers was actually the reason they cancelled. My mentor explained that correlation does not necessarily mean causation and that additional data would be needed to understand customer behaviour.
+
+My second question was about calculating revenue per subscription plan, because the total monthly revenue and number of users per plan were not enough to directly answer which plan generated the most revenue.
+
+My mentor encouraged me to run an additional query to calculate revenue per plan and explain my reasoning in the findings report.
+
+This feedback helped me understand that data analysis is not just about writing SQL queries. It also involves asking the right questions, recognising the limitations of a dataset and using evidence to support business decisions.
+
+I decided to include additional queries investigating revenue per plan and the relationship between customer engagement and subscription cancellations.
+
+
+### 8. Section C — Combining Tables Using JOINs
+
+In this section, I worked with all three tables to analyse customer engagement and viewing behaviour.
+
+I used INNER JOIN to connect users, views and shows. I combined JOINs with GROUP BY, SUM and COUNT to calculate viewing minutes per genre, identify the most-watched show and compare engagement across subscription plans.
+
+I found that Drama generated the most viewing minutes and Township Tales was the most-played show. I also discovered that the three most-engaged users were all Premium subscribers.
+
+Using LEFT JOIN, I identified three users who had never watched anything in the available viewing records. All three had cancelled their subscriptions.
+
+Based on my mentor's feedback, I understand that this does not necessarily mean that a lack of viewing activity caused them to cancel. More information would be needed to understand their reasons.
+
+This section helped me understand how combining tables can provide more meaningful business insights than analysing individual tables separately.
