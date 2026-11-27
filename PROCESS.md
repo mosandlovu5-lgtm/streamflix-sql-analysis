@@ -145,3 +145,18 @@ I supported my findings with actual figures from my SQL queries and included add
 I also incorporated my mentor's feedback by explaining the difference between correlation and causation and identifying additional information that would be needed to understand customer cancellations.
 
 This helped me understand how to communicate technical results in a way that business stakeholders can understand and use to make decisions.
+
+
+### 12. Project Documentation and Final Reflection
+
+I created a professional README file to explain the purpose of my project, describe the dataset, highlight my key findings and provide instructions for running the SQL queries.
+
+Throughout this project, I developed my understanding of SQL foundations, JOINs, subqueries, CASE statements, data cleaning and business analysis.
+
+One of the most valuable lessons I learned was that getting the correct SQL result is only one part of being a data analyst. It is equally important to understand what the result means, ask further questions and avoid making conclusions that are not supported by the available data.
+
+My discussions with my mentor helped me improve my critical thinking and understand the importance of distinguishing correlation from causation.
+
+I also developed my confidence in using Git and GitHub to document my progress and manage a data analysis project.
+
+If I were to extend this project in the future, I would include more customer data, create visual dashboards and investigate customer retention patterns over time.
