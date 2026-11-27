@@ -132,3 +132,16 @@ My mentor helped me understand the difference between correlation and causation.
 I also investigated the potential monthly revenue associated with cancelled subscriptions and checked whether any active subscribers had no viewing records.
 
 This additional analysis helped me understand that being a data analyst is not just about writing SQL queries but also about asking meaningful questions, interpreting results and providing recommendations that can help a business make better decisions.
+
+
+### 11. Writing the Business Findings Report
+
+After completing my SQL queries, I used the results to create a business findings report.
+
+I organised my findings into revenue, customer churn, customer engagement, data quality, recommendations and limitations.
+
+I supported my findings with actual figures from my SQL queries and included additional calculations where necessary.
+
+I also incorporated my mentor's feedback by explaining the difference between correlation and causation and identifying additional information that would be needed to understand customer cancellations.
+
+This helped me understand how to communicate technical results in a way that business stakeholders can understand and use to make decisions.
