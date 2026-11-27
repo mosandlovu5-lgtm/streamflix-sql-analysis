@@ -150,3 +150,59 @@ FROM users u
 LEFT JOIN views v ON u.user_id = v.user_id
 WHERE v.view_id IS NULL;
 
+
+-- ============================================================
+-- SECTION D: DEEPER ANALYSIS
+-- Subqueries, CASE Statements and Data Quality
+-- ============================================================
+
+-- Q15: Identify users who pay more than
+-- the average monthly subscription price.
+
+SELECT full_name, monthly_price
+FROM users
+WHERE monthly_price > (
+    SELECT AVG(monthly_price)
+    FROM users
+);
+
+
+-- Q16: Calculate the churn rate for each
+-- subscription plan using CASE.
+
+SELECT plan,
+       ROUND(
+           100.0 * SUM(
+               CASE
+                   WHEN is_active = 0 THEN 1
+                   ELSE 0
+               END
+           ) / COUNT(*), 1
+       ) AS churn_pct
+FROM users
+GROUP BY plan
+ORDER BY plan;
+
+
+-- Q17: Standardise country names and
+-- count users per country.
+
+SELECT LOWER(country) AS country,
+       COUNT(*) AS total_users
+FROM users
+GROUP BY LOWER(country)
+ORDER BY total_users DESC;
+
+-- Q18: Categorise shows based on their ratings
+-- using a CASE statement.
+
+SELECT title,
+       rating,
+       CASE
+           WHEN rating IS NULL THEN 'Not rated yet'
+           WHEN rating >= 8 THEN 'Highly rated'
+           ELSE 'Average'
+       END AS rating_category
+FROM shows
+ORDER BY rating DESC;
+
