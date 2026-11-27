@@ -100,3 +100,35 @@ Using LEFT JOIN, I identified three users who had never watched anything in the 
 Based on my mentor's feedback, I understand that this does not necessarily mean that a lack of viewing activity caused them to cancel. More information would be needed to understand their reasons.
 
 This section helped me understand how combining tables can provide more meaningful business insights than analysing individual tables separately.
+
+
+### 9. Section D — Deeper Analysis and Data Quality
+
+In this section, I learned how to use subqueries, CASE statements and LOWER() to perform deeper analysis.
+
+I used a subquery to identify users who pay more than the average subscription price. I found that all four Premium users pay above the average.
+
+I also calculated the churn rate for each subscription plan and discovered that Standard had the highest churn rate at 75%, followed by Basic at 25% and Premium at 0%.
+
+Another issue I identified was the inconsistent capitalisation of country names. I used LOWER() to group the country names correctly without changing the original data.
+
+Lastly, I used a CASE statement to categorise shows according to their ratings and handle missing ratings separately.
+
+This section helped me understand how important data quality and accurate calculations are when analysing business performance.
+
+
+### 10. Additional Business Analysis and Mentor Feedback
+
+After completing the 18 compulsory questions, I decided to investigate the business performance of StreamFlix further.
+
+During my discussion with my mentor, I learned that knowing the total revenue and number of subscribers per plan was not enough to determine which subscription plan generated the most revenue.
+
+I created an additional query and discovered that Premium generated R796 per month, contributing approximately 64.1% of the total monthly revenue.
+
+I also investigated the relationship between customer engagement and subscription cancellations. I found that three of the four cancelled subscribers had no recorded viewing activity, while all active subscribers had watched content.
+
+My mentor helped me understand the difference between correlation and causation. Although the results suggest a relationship between engagement and churn, more data would be needed to understand the actual reasons customers cancelled.
+
+I also investigated the potential monthly revenue associated with cancelled subscriptions and checked whether any active subscribers had no viewing records.
+
+This additional analysis helped me understand that being a data analyst is not just about writing SQL queries but also about asking meaningful questions, interpreting results and providing recommendations that can help a business make better decisions.

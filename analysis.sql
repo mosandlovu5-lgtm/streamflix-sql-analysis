@@ -206,3 +206,61 @@ SELECT title,
 FROM shows
 ORDER BY rating DESC;
 
+
+-- ============================================================
+-- SECTION E: ADDITIONAL BUSINESS ANALYSIS
+-- Applying Mentor Feedback
+-- ============================================================
+
+-- Q19: Calculate monthly revenue per active subscription plan.
+
+SELECT plan,
+       COUNT(*) AS active_users,
+       monthly_price,
+       SUM(monthly_price) AS monthly_revenue
+FROM users
+WHERE is_active = 1
+GROUP BY plan, monthly_price
+ORDER BY monthly_revenue DESC;
+
+
+-- Q20: Compare viewing activity between active
+-- and cancelled subscribers.
+
+SELECT
+    CASE
+        WHEN u.is_active = 1 THEN 'Active'
+        ELSE 'Cancelled'
+    END AS subscription_status,
+    COUNT(DISTINCT u.user_id) AS total_users,
+    COUNT(DISTINCT CASE
+        WHEN v.view_id IS NULL THEN u.user_id
+    END) AS users_without_views,
+    COUNT(v.view_id) AS total_views
+FROM users u
+LEFT JOIN views v ON u.user_id = v.user_id
+GROUP BY u.is_active
+ORDER BY u.is_active DESC;
+
+
+-- Q21: Calculate the monthly subscription value
+-- associated with cancelled accounts.
+
+SELECT plan,
+       COUNT(*) AS cancelled_users,
+       SUM(monthly_price) AS cancelled_monthly_value
+FROM users
+WHERE is_active = 0
+GROUP BY plan
+ORDER BY cancelled_monthly_value DESC;
+
+
+-- Q22: Identify active subscribers who have
+-- no recorded viewing activity.
+
+SELECT u.full_name,
+       u.plan
+FROM users u
+LEFT JOIN views v ON u.user_id = v.user_id
+WHERE u.is_active = 1
+AND v.view_id IS NULL;
